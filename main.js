@@ -33,18 +33,19 @@ function verificarPoder(senha) {
     var possuiMinuscula = /[a-z]/.test(senha);
     var possuiMaiuscula = /[A-Z]/.test(senha);
     var possuiNumeros = /\d/.test(senha);
+    
     var possuiSimbolo = /[!@#$^&*()_+{}\[\]:;<>,.?~\\/-]/.test(senha);
 
     // Pontos com base nas regras
     var Poder = 0;
 
-    if (senha.lenght >= comprimentoMinimo) {
+    if (senha.length >= comprimentoMinimo) {
         Poder += 25;
         requisitoComprimento.classList.remove('vermelho');
         requisitoComprimento.classList.add('verde');
     } else {
-        requisitoComprimento.classList.remove('vermelho');
-        requisitoComprimento.classList.add('verde');
+        requisitoComprimento.classList.add('vermelho');
+        requisitoComprimento.classList.remove('verde');
     }
 
     if (possuiMinuscula) {
